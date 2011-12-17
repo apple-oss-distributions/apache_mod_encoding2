@@ -8,13 +8,15 @@
 include $(MAKEFILEPATH)/pb_makefiles/platform.make
 include $(MAKEFILEPATH)/pb_makefiles/commands-$(OS).make
 
+-include /AppleInternal/ServerTools/ServerBuildVariables.xcconfig
 PROJECT_NAME	= apache_mod_encoding
 MOD_ENCODING_TGZ= mod_encoding-20021209.tar.gz
 SRC_DIR		= mod_encoding-20021209
 VERSIONS_DIR	= /usr/local/OpenSourceVersions
 LICENSE_DIR	= /usr/local/OpenSourceLicenses
+export LTFLAGS = --tag=CC
 APXS		= /usr/sbin/apxs
-MODULE_DIR      = $(shell $(APXS) -q LIBEXECDIR)
+MODULE_DIR      = $(SERVER_INSTALL_PATH_PREFIX)/$(shell $(APXS) -q LIBEXECDIR)
 BIN_FILE	= mod_encoding.so
 SRC_FILE	= mod_encoding.c
 #SRC_UPDATE_FILE = mod_encoding.c.apache2.20040616
