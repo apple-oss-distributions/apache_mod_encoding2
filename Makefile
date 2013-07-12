@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2005-2006 Apple Computer, Inc.
+# Copyright (c) 2005-2013 Apple Computer, Inc.
 # Wrapper Makefile for mod_encoding
 #
 
@@ -9,6 +9,7 @@ include $(MAKEFILEPATH)/pb_makefiles/platform.make
 include $(MAKEFILEPATH)/pb_makefiles/commands-$(OS).make
 
 -include /AppleInternal/ServerTools/ServerBuildVariables.xcconfig
+
 PROJECT_NAME	= apache_mod_encoding
 MOD_ENCODING_TGZ= mod_encoding-20021209.tar.gz
 SRC_DIR		= mod_encoding-20021209
